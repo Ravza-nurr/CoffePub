@@ -1,26 +1,100 @@
 @import "tailwindcss";
 
+/* CSS değişkenleri */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #7a4637;
+  --color-secondary: #421917;
+  --color-brandDark: #240802;
+  --color-dark: #1c1c1c;
+  --color-light: #f0f0f0;
+
+  --font-family-poppins: var(--font-poppins);
+  --font-family-pacifiko: var(--font-pacifiko);
+  --font-family-second2: var(--font-second2);
+  --font-family-second3: var(--font-second3);
+
+  --container-padding: 1rem;
+  --container-padding-sm: 3rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Font variable'ları CSS'de tanımla */
+:root {
+  --font-poppins: "Poppins", sans-serif;
+  --font-pacifiko: "Pacifico", cursive;
+  --font-second2: "Sriracha", cursive;
+  --font-second3: "Srisakdi", cursive;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Font sınıfları için yardımcı CSS */
+.font-poppins {
+  font-family: var(--font-poppins);
+}
+
+.font-pacifiko {
+  font-family: var(--font-pacifiko);
+}
+
+.font-second2 {
+  font-family: var(--font-second2);
+}
+
+.font-second3 {
+  font-family: var(--font-second3);
+}
+
+html,
+body,
+:root {
+  padding: 0;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.spin {
+  animation: spin 30s linear infinite;
+}
+
+@keyframes spinone {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(60px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.spinone {
+  animation: spinone 7s linear infinite;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: #f0f0f0 !important;
+  padding: 4px !important;
+}
+
+.swiper-pagination-bullet {
+  width: var(
+    --swiper-pagination-bullet-width,
+    var(--swiper-pagination-bullet-size, 8px)
+  );
+  height: var(
+    --swiper-pagination-bullet-height,
+    var(--swiper-pagination-bullet-size, 8px)
+  );
+  display: inline-block;
+  border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+  background: #f0f0f0 !important;
+  padding: 4px !important;
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.7);
 }
